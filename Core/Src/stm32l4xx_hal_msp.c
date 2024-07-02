@@ -99,8 +99,9 @@ void HAL_TSC_MspInit(TSC_HandleTypeDef* htsc)
     PB12     ------> TSC_G1_IO1
     PB13     ------> TSC_G1_IO2
     PB14     ------> TSC_G1_IO3
+    PB15     ------> TSC_G1_IO4
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
+    GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_15;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -144,8 +145,9 @@ void HAL_TSC_MspDeInit(TSC_HandleTypeDef* htsc)
     PB12     ------> TSC_G1_IO1
     PB13     ------> TSC_G1_IO2
     PB14     ------> TSC_G1_IO3
+    PB15     ------> TSC_G1_IO4
     */
-    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14);
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15);
 
     /* TSC interrupt DeInit */
     HAL_NVIC_DisableIRQ(TSC_IRQn);
